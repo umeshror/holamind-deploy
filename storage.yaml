@@ -1,0 +1,37 @@
+# Postgres PersistentVolume
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: postgres-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    #    It matches this storage, accessModes with postgres-pvc and storageClassName
+    storage: 2Gi
+  storageClassName: manual # selector
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: /data/postgres-pv
+
+---
+
+# Postgres PersistentVolumeClaim
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: postgres-pvc
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 2Gi
+  volumeName: postgres-pv
+
