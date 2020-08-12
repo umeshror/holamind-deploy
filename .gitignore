@@ -1,0 +1,17 @@
+*.log
+*.pot
+*.pyc
+__pycache__/
+media
+.idea/
+env/
+*.pyo
+*.db
+*.project
+*.pydevproject
+.DS_Store
+build
+logs
+CACHE
+.ignore/l
+db.sqlite3
