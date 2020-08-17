@@ -34,7 +34,8 @@ spec:
     spec:
       containers:
       - name: flower
-        image: umeshvjti/fakeimage:latest
+        image: umeshvjti/holaskills:latest
+        imagePullPolicy: Always
         command: ['celery', 'flower', '-A', 'config' , 'flower']
         ports:
           - containerPort: 5555
@@ -46,3 +47,5 @@ spec:
         resources:
           limits:
             cpu: 100m
+      imagePullSecrets:
+      - name: regcred

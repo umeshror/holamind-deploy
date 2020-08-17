@@ -19,13 +19,17 @@ spec:
     spec:
       containers:
         - name: celery-worker
-          image: umeshvjti/fakeimage:latest
+          image: umeshvjti/holaskills:latest
+          imagePullPolicy: Always
           command: ['celery', '-A', 'config', 'worker', '-l', 'info']
           envFrom:
             - configMapRef:
                 name: appconfig
             - secretRef:
                 name: appsecrets
+      imagePullSecrets:
+      - name: regcred
+
 ---
 
 # Celery Beat
@@ -48,10 +52,13 @@ spec:
     spec:
       containers:
         - name: celery-beat
-          image: umeshvjti/fakeimage:latest
+          image: umeshvjti/holaskills:latest
+          imagePullPolicy: Always
           command: ['celery', '-A', 'config', 'beat', '-l', 'info']
           envFrom:
             - configMapRef:
                 name: appconfig
             - secretRef:
                 name: appsecrets
+      imagePullSecrets:
+      - name: regcred

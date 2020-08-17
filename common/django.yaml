@@ -6,7 +6,7 @@ apiVersion: v1
 metadata:
   name: django-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     component: django
   ports:
@@ -34,8 +34,8 @@ spec:
     spec:
       containers:
         - name: django
-          image: umeshvjti/fakeimage:latest
-          imagePullPolicy: "Always"
+          image: umeshvjti/holaskills:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
           envFrom:
@@ -43,3 +43,5 @@ spec:
                 name: appconfig
             - secretRef:
                 name: appsecrets
+      imagePullSecrets:
+      - name: regcred
