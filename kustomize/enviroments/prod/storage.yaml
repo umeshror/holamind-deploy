@@ -5,7 +5,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: postgres-pvc
   labels:
-    type: qa
+    type: prod
 spec:
   accessModes:
     - ReadWriteOnce

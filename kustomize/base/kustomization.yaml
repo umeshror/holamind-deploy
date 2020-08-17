@@ -1,0 +1,8 @@
+resources:
+  - celery.yaml
+  - collectstatic-jobs.yaml
+  - django.yaml
+  - flower.yaml
+  - migration-job.yaml
+  - postgres.yaml
+  - redis.yaml

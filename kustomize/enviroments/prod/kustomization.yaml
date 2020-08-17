@@ -1,0 +1,19 @@
+bases:
+  - ../../base
+
+patches:
+  - replica_count.yaml
+  - resource_limits.yaml
+
+resources:
+  - env.yaml
+  - ingress-service.yaml
+  - storage.yaml
+  - config.yaml
+
+patchesStrategicMerge:
+  - env.yaml
+
+images:
+- name: umeshvjti/holaskills
+  newTag: latest
