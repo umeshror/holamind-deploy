@@ -10,7 +10,7 @@ spec:
     pod: celery-flower
   ports:
   - port: 5555
-  type: ClusterIP
+  type: NodePort
 
 ---
 
