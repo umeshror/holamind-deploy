@@ -2,7 +2,6 @@
 *.pot
 *.pyc
 __pycache__/
-media
 .idea/
 env/
 *.pyo
@@ -10,8 +9,4 @@ env/
 *.project
 *.pydevproject
 .DS_Store
-build
-logs
-CACHE
 .ignore/l
-db.sqlite3
