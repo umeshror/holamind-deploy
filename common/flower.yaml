@@ -36,7 +36,7 @@ spec:
       - name: flower
         image: umeshvjti/holaskills:latest
         imagePullPolicy: Always
-        command: ['celery', 'flower', '-A', 'config' , 'flower']
+        command: ["flower", "-A", "config", "--port=5555", "--address=0.0.0.0",  "-l=info"]
         ports:
           - containerPort: 5555
         envFrom:
