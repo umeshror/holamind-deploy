@@ -1,12 +1,4 @@
-*.log
-*.pot
-*.pyc
-__pycache__/
 .idea/
 env/
-*.pyo
-*.db
-*.project
-*.pydevproject
 .DS_Store
-.ignore/l
+.ignore
